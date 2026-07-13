@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proyecto Anatomía 3D</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Proyecto Anatomía 3D</h1>
+
+</header>
+
+<div id="contenedor">
+
+    <aside id="panel">
+
+        <h2>Anatomía</h2>
+
+        <button id="btnCompleto">
+            🧍 Cuerpo Completo
+        </button>
+
+        <button id="btnHuesos">
+            🦴 Sistema Óseo
+        </button>
+
+        <button id="btnMusculos">
+            💪 Sistema Muscular
+        </button>
+
+        <button id="btnSkeleton">
+            💀 Anatomía del Sistema Óseo
+        </button>
+
+        <button id="btnBiomoleculas">
+    🧬 Biomoléculas del cuerpo
+</button>
+
+        <button id="btnElectronica">
+    ⚛️ Distribución electrónica
+</button>
+
+        <hr>
+
+        <h3>Información</h3>
+
+        <div id="info">
+
+            Selecciona un hueso para ver su descripción.
+
+        </div>
+
+    </aside>
+
+    <main id="visor3D"></main>
+
+<div id="panelKrebsLateral">
+
+    <h2>🔄 Ciclo de Krebs</h2>
+
+    <p class="introKrebs">
+        Observa cómo los nutrientes se transforman en energía
+        para músculos, huesos y órganos.
+    </p>
+
+    <div class="botonesKrebs">
+
+        <button class="btnPasoKrebs activo" data-paso="entrada">
+            1. Entrada
+        </button>
+
+        <button class="btnPasoKrebs" data-paso="ciclo">
+            2. Ciclo
+        </button>
+
+        <button class="btnPasoKrebs" data-paso="energia">
+            3. Energía
+        </button>
+
+        <button class="btnPasoKrebs" data-paso="anatomia">
+            4. Anatomía
+        </button>
+
+    </div>
+
+    <div id="visualKrebs">
+
+        <div class="orbitaKrebs">
+
+            <div class="centroKrebs">
+                ATP
+            </div>
+
+            <div class="moleculaKrebs molecula1">
+                NADH
+            </div>
+
+            <div class="moleculaKrebs molecula2">
+                FADH₂
+            </div>
+
+            <div class="moleculaKrebs molecula3">
+                CO₂
+            </div>
+
+            <div class="moleculaKrebs molecula4">
+                Acetil-CoA
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="contenidoKrebs">
+
+        <h3>Entrada al ciclo</h3>
+
+        <p>
+            Los carbohidratos, lípidos y proteínas pueden producir
+            acetil-CoA, que entra al ciclo de Krebs.
+        </p>
+
+        <div class="conexionAnatomica">
+            🧬 Biomoléculas → Acetil-CoA
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+    <div id="panelBiomoleculas">
+
+    <button id="btnRegresarBiomoleculas">
+        ← Regresar a Anatomía 3D
+    </button>
+
+    <h2>Biomoléculas del cuerpo humano</h2>
+
+    <p class="introduccionBiomoleculas">
+        Los elementos químicos se unen para formar biomoléculas.
+        Estas constituyen las células, tejidos, huesos, músculos
+        y demás estructuras del cuerpo.
+    </p>
+
+    <div class="contenedorBiomoleculas">
+
+        <article class="tarjetaBiomolecula">
+
+            <h3>🥩 Proteínas</h3>
+
+            <p>
+                Están formadas principalmente por carbono, hidrógeno,
+                oxígeno y nitrógeno.
+            </p>
+
+            <p>
+                <b>Relación con el sistema muscular:</b>
+                la actina y la miosina permiten la contracción muscular.
+            </p>
+
+            <p>
+                <b>Relación con el sistema óseo:</b>
+                el colágeno aporta flexibilidad y resistencia a los huesos.
+            </p>
+
+        </article>
+
+        <article class="tarjetaBiomolecula">
+
+            <h3>🍞 Carbohidratos</h3>
+
+            <p>
+                Son la principal fuente rápida de energía para las células.
+            </p>
+
+            <p>
+                <b>Relación con los músculos:</b>
+                la glucosa proporciona energía para el movimiento.
+            </p>
+
+            <p>
+                El glucógeno almacena glucosa principalmente en músculos
+                e hígado.
+            </p>
+
+        </article>
+
+        <article class="tarjetaBiomolecula">
+
+            <h3>🥑 Lípidos</h3>
+
+            <p>
+                Funcionan como reserva de energía y forman parte de
+                las membranas celulares.
+            </p>
+
+            <p>
+                Protegen órganos, aíslan térmicamente el cuerpo
+                y participan en la producción de algunas hormonas.
+            </p>
+
+        </article>
+
+        <article class="tarjetaBiomolecula">
+
+            <h3>🧬 Ácidos nucleicos</h3>
+
+            <p>
+                El ADN almacena la información genética y el ARN participa
+                en la fabricación de proteínas.
+            </p>
+
+            <p>
+                Controlan la formación, reparación y funcionamiento
+                de los tejidos del cuerpo.
+            </p>
+
+        </article>
+
+        <article class="tarjetaBiomolecula">
+
+            <h3>💧 Agua</h3>
+
+            <p>
+                Es la biomolécula más abundante del organismo.
+            </p>
+
+            <p>
+                Transporta sustancias, regula la temperatura y permite
+                reacciones químicas dentro de las células.
+            </p>
+
+        </article>
+
+        <article class="tarjetaBiomolecula">
+
+            <h3>🦴 Sales minerales</h3>
+
+            <p>
+                El calcio y el fósforo forman parte de la estructura
+                mineral de los huesos y los dientes.
+            </p>
+
+            <p>
+                El calcio también participa en la contracción muscular
+                y en la transmisión de señales celulares.
+            </p>
+
+        </article>
+
+    </div>
+
+</div>
+
+<div id="panelElectronico">
+
+    <button id="btnRegresar">
+    ← Regresar a Anatomía 3D
+</button>
+
+    <h2>Distribución electrónica</h2>
+
+    <p>
+        Selecciona un elemento químico.
+    </p>
+
+    <select id="selectorElemento">
+
+        <option value="H">Hidrógeno</option>
+        <option value="C">Carbono</option>
+        <option value="O">Oxígeno</option>
+        <option value="Na">Sodio</option>
+        <option value="Cl">Cloro</option>
+        <option value="Ca">Calcio</option>
+
+    </select>
+
+    <div id="informacionElemento"></div>
+
+    <div id="atomo"></div>
+
+</div>
+
+</div>
+
+<div id="firma">
+
+    Grupo #4
+
+</div>
+
+<script src="three.min.js"></script>
+
+<script src="GLTFLoader.js"></script>
+
+<script src="OrbitControls.js"></script>
+
+<script src="informacion.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

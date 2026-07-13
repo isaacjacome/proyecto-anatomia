@@ -1,0 +1,1072 @@
+/*======================================================
+RESET
+======================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/*======================================================
+BODY
+======================================================*/
+
+body{
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+    background:#e9edf2;
+
+    overflow:hidden;
+
+}
+
+header{
+
+    height:70px;
+
+    background:linear-gradient(
+        90deg,
+        #bfdbfe 0%,
+        #93c5fd 30%,
+        #60a5fa 60%,
+        #2563eb 100%
+    );
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    box-shadow:0 3px 12px rgba(30,64,175,.3);
+
+}
+
+/*======================================================
+CONTENEDOR
+======================================================*/
+
+#contenedor{
+
+    display:flex;
+
+    height:calc(100vh - 70px);
+
+}
+
+/*======================================================
+PANEL
+======================================================*/
+
+#panel{
+
+    width:310px;
+
+    background:white;
+
+    border-right:1px solid #d8d8d8;
+
+    padding:20px;
+
+    overflow:auto;
+
+}
+
+#panel h2{
+
+    color:#1e293b;
+
+    margin-bottom:20px;
+
+}
+
+#panel h3{
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+
+    color:#374151;
+
+}
+
+/*======================================================
+BOTONES
+======================================================*/
+
+#panel button{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#panel button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+#panel button:active{
+
+    transform:scale(.98);
+
+}
+
+hr{
+
+    margin:20px 0;
+
+}
+
+/*======================================================
+PANEL INFORMACIÓN
+======================================================*/
+
+#info{
+
+    background:#f8fafc;
+
+    border:1px solid #dbe3ec;
+
+    border-radius:8px;
+
+    padding:12px;
+
+    min-height:120px;
+
+    color:#475569;
+
+    line-height:1.6;
+
+    font-size:15px;
+
+}
+
+/*======================================================
+VISOR 3D
+======================================================*/
+
+#visor3D{
+
+    flex:1;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#1e1f22;
+
+    background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
+    background-size:40px 40px;
+
+}
+
+canvas{
+
+    display:block;
+
+}
+
+/*======================================================
+FIRMA
+======================================================*/
+
+#firma{
+
+    position:fixed;
+
+    right:15px;
+
+    bottom:10px;
+
+    color:#bfbfbf;
+
+    font-size:12px;
+
+    font-style:italic;
+
+    opacity:.8;
+
+    user-select:none;
+
+    z-index:999;
+
+}
+
+/*======================================================
+SCROLL
+======================================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#c5c5c5;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#9d9d9d;
+
+}
+/*======================================================
+CUADERNO FLOTANTE
+======================================================*/
+
+
+#cuaderno{
+
+    position:absolute;
+
+    right:25px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:260px;
+
+    background:#fff7d6;
+
+    border:3px solid #c89b4a;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.5);
+
+    z-index:10;
+
+}
+
+
+#cuaderno.oculto{
+
+    display:none;
+
+}
+
+
+
+.pagina{
+
+    background:#fffdf5;
+
+    min-height:180px;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    animation:girarPagina .5s;
+
+}
+
+
+.pagina h2{
+
+    color:#7c2d12;
+
+    font-size:20px;
+
+}
+
+
+.pagina p{
+
+    margin-top:15px;
+
+    color:#374151;
+
+    line-height:1.5;
+
+}
+
+
+
+#siguientePagina{
+
+
+    margin-top:15px;
+
+    float:right;
+
+
+    width:45px;
+
+    height:35px;
+
+
+    border:none;
+
+    border-radius:20px;
+
+
+    background:#2563eb;
+
+    color:white;
+
+
+    cursor:pointer;
+
+    font-size:20px;
+
+
+}
+
+
+
+#siguientePagina:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+@keyframes girarPagina{
+
+
+from{
+
+    transform:rotateY(-90deg);
+
+    opacity:0;
+
+}
+
+
+to{
+
+    transform:rotateY(0);
+
+    opacity:1;
+
+}
+
+
+}
+
+/*======================================================
+DISTRIBUCIÓN ELECTRÓNICA
+======================================================*/
+
+#panelElectronico{
+
+    display:none;
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    padding:35px;
+
+    overflow:auto;
+
+    text-align:center;
+
+    color:white;
+
+    background:#1e1f22;
+
+    z-index:10;
+
+}
+
+#panelElectronico h2{
+
+    margin-bottom:10px;
+
+    font-size:30px;
+
+}
+
+#panelElectronico p{
+
+    margin-bottom:20px;
+
+    color:#cbd5e1;
+
+}
+
+
+
+#selectorElemento{
+
+    width:250px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    margin-bottom:20px;
+
+}
+
+#informacionElemento{
+
+    width:min(500px, 90%);
+
+    margin:0 auto 25px;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    color:#1e293b;
+
+    line-height:1.7;
+
+}
+
+#atomo{
+
+    position:relative;
+
+    width:350px;
+
+    height:350px;
+
+    margin:20px auto;
+
+    border-radius:50%;
+
+}
+
+.nucleo{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    width:70px;
+
+    height:70px;
+
+    transform:translate(-50%,-50%);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#ef4444;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:20px;
+
+    z-index:5;
+
+}
+
+.nivel{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    border:2px solid rgba(255,255,255,.55);
+
+    border-radius:50%;
+
+}
+
+.electron{
+
+    position:absolute;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:#38bdf8;
+
+    box-shadow:0 0 10px #38bdf8;
+
+    transform:translate(-50%,-50%);
+
+}
+
+/*======================================================
+BIOMOLÉCULAS
+======================================================*/
+
+#panelBiomoleculas{
+
+    display:none;
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    padding:30px;
+
+    overflow:auto;
+
+    color:white;
+
+    background:#1e1f22;
+
+    z-index:12;
+
+}
+
+#panelBiomoleculas h2{
+
+    margin:20px 0 10px;
+
+    text-align:center;
+
+    font-size:30px;
+
+}
+
+.introduccionBiomoleculas{
+
+    max-width:850px;
+
+    margin:0 auto 25px;
+
+    text-align:center;
+
+    line-height:1.7;
+
+    color:#cbd5e1;
+
+}
+
+.contenedorBiomoleculas{
+
+    display:grid;
+
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(260px,1fr)
+    );
+
+    gap:20px;
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+.tarjetaBiomolecula{
+
+    padding:20px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    color:#1e293b;
+
+    line-height:1.6;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.25);
+
+}
+
+.tarjetaBiomolecula h3{
+
+    margin-bottom:12px;
+
+    color:#2563eb;
+
+}
+
+.tarjetaBiomolecula p{
+
+    margin-bottom:10px;
+
+}
+
+#btnRegresarBiomoleculas{
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+/*======================================================
+PANEL LATERAL CICLO DE KREBS
+======================================================*/
+
+#panelKrebsLateral{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    width:280px;
+
+    max-height:calc(100% - 40px);
+
+    padding:18px;
+
+    overflow:auto;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:14px;
+
+    background:rgba(15,23,42,.92);
+
+    color:white;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+
+    z-index:5;
+
+}
+
+#panelKrebsLateral h2{
+
+    margin-bottom:12px;
+
+    color:#60a5fa;
+
+    text-align:center;
+
+}
+
+#panelKrebsLateral > p{
+
+    margin-bottom:16px;
+
+    color:#cbd5e1;
+
+    line-height:1.5;
+
+    text-align:center;
+
+}
+
+.datoKrebs{
+
+    margin-bottom:12px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:#f8fafc;
+
+    color:#1e293b;
+
+}
+
+.datoKrebs h3{
+
+    margin-bottom:6px;
+
+    color:#2563eb;
+
+    font-size:16px;
+
+}
+
+.datoKrebs p{
+
+    line-height:1.5;
+
+    font-size:14px;
+
+}
+
+/*======================================================
+ANIMACIÓN BOTONES REGRESAR
+======================================================*/
+
+#btnRegresar,
+#btnRegresarBiomoleculas{
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+#btnRegresar:hover,
+#btnRegresarBiomoleculas:hover{
+
+    transform:translateX(-5px);
+
+    box-shadow:0 5px 15px rgba(37,99,235,.4);
+
+}
+
+
+/* EFECTO AL PRESIONAR */
+
+#btnRegresar:active,
+#btnRegresarBiomoleculas:active{
+
+    transform:scale(.94);
+
+}
+
+
+/* ONDA AL HACER CLICK */
+
+#btnRegresar::after,
+#btnRegresarBiomoleculas::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    width:0;
+
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:translate(-50%,-50%);
+
+    transition:
+        width .45s ease,
+        height .45s ease;
+
+}
+
+#btnRegresar:active::after,
+#btnRegresarBiomoleculas:active::after{
+
+    width:300px;
+
+    height:300px;
+
+}
+
+
+/*======================================================
+ANIMACIÓN PARA REGRESAR AL VISOR 3D
+======================================================*/
+
+.visorEntrada{
+
+    animation:entradaVisor .65s ease;
+
+}
+
+@keyframes entradaVisor{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*======================================================
+ANIMACIÓN DE ENTRADA DE PANELES
+======================================================*/
+
+.panelEntrada{
+
+    animation:mostrarPanel .55s ease;
+
+}
+
+@keyframes mostrarPanel{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.96) translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1) translateY(0);
+
+    }
+
+}
+
+
+/* ANIMACIÓN DE TARJETAS DE BIOMOLÉCULAS */
+
+.tarjetaBiomolecula{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+}
+
+#panelBiomoleculas.panelEntrada .tarjetaBiomolecula{
+
+    animation:entradaTarjeta .5s ease forwards;
+
+}
+
+#panelBiomoleculas.panelEntrada
+.tarjetaBiomolecula:nth-child(1){
+
+    animation-delay:.08s;
+
+}
+
+#panelBiomoleculas.panelEntrada
+.tarjetaBiomolecula:nth-child(2){
+
+    animation-delay:.16s;
+
+}
+
+#panelBiomoleculas.panelEntrada
+.tarjetaBiomolecula:nth-child(3){
+
+    animation-delay:.24s;
+
+}
+
+#panelBiomoleculas.panelEntrada
+.tarjetaBiomolecula:nth-child(4){
+
+    animation-delay:.32s;
+
+}
+
+#panelBiomoleculas.panelEntrada
+.tarjetaBiomolecula:nth-child(5){
+
+    animation-delay:.40s;
+
+}
+
+#panelBiomoleculas.panelEntrada
+.tarjetaBiomolecula:nth-child(6){
+
+    animation-delay:.48s;
+
+}
+
+@keyframes entradaTarjeta{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ANIMACIÓN DEL ÁTOMO */
+
+#panelElectronico.panelEntrada #atomo{
+
+    animation:entradaAtomo .7s ease;
+
+}
+
+@keyframes entradaAtomo{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.65) rotate(-15deg);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1) rotate(0);
+
+    }
+
+}
+
+
+/* PULSO DEL NÚCLEO */
+
+.nucleo{
+
+    animation:pulsoNucleo 1.8s ease-in-out infinite;
+
+}
+
+@keyframes pulsoNucleo{
+
+    0%,100%{
+
+        transform:translate(-50%,-50%) scale(1);
+
+    }
+
+    50%{
+
+        transform:translate(-50%,-50%) scale(1.12);
+
+    }
+
+}
+
+
+/* EFECTO AL HACER CLICK EN BOTONES */
+
+#btnElectronica,
+#btnBiomoleculas{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#btnElectronica::after,
+#btnBiomoleculas::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    width:0;
+
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:translate(-50%,-50%);
+
+    transition:width .45s,height .45s;
+
+}
+
+#btnElectronica:active::after,
+#btnBiomoleculas:active::after{
+
+    width:320px;
+
+    height:320px;
+
+}
